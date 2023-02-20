@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,6 +53,12 @@ public class TarefaController {
 	public ResponseEntity<TarefaDTO> atualizarTarefa(@PathVariable Integer id,@RequestBody @Valid TarefaDTO tDTO){
 		Tarefa tarefa = tarefaService.atualizarTarefa(id,tDTO);
 		return ResponseEntity.ok().body(new TarefaDTO(tarefa));
+	}
+	
+	@DeleteMapping(path="/delete/{id}")
+	public ResponseEntity<TarefaDTO> deletarTarefa(@PathVariable Integer id){
+		tarefaService.deletarTarefa(id);
+		return ResponseEntity.noContent().build();
 	}
 	
 	

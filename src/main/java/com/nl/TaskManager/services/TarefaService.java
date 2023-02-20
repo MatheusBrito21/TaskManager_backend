@@ -37,5 +37,9 @@ public class TarefaService {
 		
 		return tarefaRepository.save(tarefa);
 	}
+
+	public void deletarTarefa(Integer id) {
+		tarefaRepository.deleteById(id);
+	}
 	
 }
