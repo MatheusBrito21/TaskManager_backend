@@ -1,2 +1,2 @@
-# TaskManager_backend
+# TaskManager
 API rest para controle de tarefas.
