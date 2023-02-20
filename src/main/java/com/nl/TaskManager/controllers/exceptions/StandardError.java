@@ -1,11 +1,12 @@
 package com.nl.TaskManager.controllers.exceptions;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class StandardError implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Long timestamp;
+	private LocalDateTime timestamp;
 	private Integer status;
 	private String error;
 	private String message;
@@ -15,7 +16,7 @@ public class StandardError implements Serializable {
 		super();
 	}
 
-	public StandardError(Long timestamp, Integer status, String error, String message, String path) {
+	public StandardError(LocalDateTime timestamp, Integer status, String error, String message, String path) {
 		super();
 		this.timestamp = timestamp;
 		this.status = status;
@@ -24,11 +25,11 @@ public class StandardError implements Serializable {
 		this.path = path;
 	}
 
-	public Long getTimestamp() {
+	public LocalDateTime getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(Long timestamp) {
+	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
 	}
 
