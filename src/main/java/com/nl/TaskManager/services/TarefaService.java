@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.nl.TaskManager.dtos.TarefaDTO;
 import com.nl.TaskManager.model.Tarefa;
 import com.nl.TaskManager.repositories.TarefaRepository;
+import com.nl.TaskManager.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class TarefaService {
@@ -23,7 +24,7 @@ public class TarefaService {
 
 	public Tarefa obterTarefa(Integer id) {
 		Optional<Tarefa> tarefa = tarefaRepository.findById(id);
-		return tarefa.orElseThrow(() -> new RuntimeException("Erro em achar tarefa"));
+		return tarefa.orElseThrow(() -> new ObjectNotFoundException("Informe um id cadastrado."));
 	}
 
 	public Tarefa cadastarTarefa(@Valid TarefaDTO tDTO) {
