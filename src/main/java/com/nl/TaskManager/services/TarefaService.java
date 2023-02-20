@@ -29,5 +29,13 @@ public class TarefaService {
 	public Tarefa cadastarTarefa(@Valid TarefaDTO tDTO) {
 		return tarefaRepository.save(new Tarefa(tDTO));
 	}
+
+	public Tarefa atualizarTarefa(Integer id, @Valid TarefaDTO tDTO) {
+		tDTO.setId(id);
+		Tarefa tarefa = obterTarefa(id);
+		tarefa = new Tarefa(tDTO);
+		
+		return tarefaRepository.save(tarefa);
+	}
 	
 }

@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,6 +45,12 @@ public class TarefaController {
 	public ResponseEntity<TarefaDTO> cadastrarTarefa(@RequestBody @Valid TarefaDTO tDTO){
 		Tarefa tarefa = tarefaService.cadastarTarefa(tDTO);
 		
+		return ResponseEntity.ok().body(new TarefaDTO(tarefa));
+	}
+	
+	@PutMapping(path="/update/{id}")
+	public ResponseEntity<TarefaDTO> atualizarTarefa(@PathVariable Integer id,@RequestBody @Valid TarefaDTO tDTO){
+		Tarefa tarefa = tarefaService.atualizarTarefa(id,tDTO);
 		return ResponseEntity.ok().body(new TarefaDTO(tarefa));
 	}
 	

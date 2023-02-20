@@ -14,7 +14,7 @@ import com.nl.TaskManager.dtos.TarefaDTO;
 @Table(name = "tarefa_tb")
 public class Tarefa {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private LocalDateTime dataInicio;
 	private LocalDateTime dataTermino;
@@ -37,6 +37,7 @@ public class Tarefa {
 	
 	public Tarefa(TarefaDTO tarefaDTO) {
 		super();
+		this.id = tarefaDTO.getId();
 		this.dataInicio = tarefaDTO.getDataInicio();
 		this.dataTermino = tarefaDTO.getDataTermino();
 		this.titulo = tarefaDTO.getTitulo();
