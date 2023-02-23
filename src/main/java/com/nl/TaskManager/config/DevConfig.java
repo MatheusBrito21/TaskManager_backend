@@ -19,6 +19,6 @@ public class DevConfig {
 	
 	@Bean 
 	public void instanciaTesteDB() {
-		if(value.equals("create"))dbService.iniciaDB();
+		if(value.equals("update"))dbService.iniciaDB();
 	}
 }

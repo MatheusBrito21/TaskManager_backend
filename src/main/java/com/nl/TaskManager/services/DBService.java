@@ -27,6 +27,7 @@ public class DBService {
 		
 		tarefaRepository.saveAll(tarefas);
 		
+		
 	}
 	
 }
