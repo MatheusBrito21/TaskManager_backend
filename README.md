@@ -1,6 +1,8 @@
 # TaskManager
 Esta é uma API Rest para gerencimaneto de tarefas, criada utilizando Java e Spring Boot.
 
+link repositorio frontend: https://github.com/MatheusBrito21/TaskManager_frontend
+
 <h3>Tecnicas e ferramentas utilizadas:</h3>
 <p>Maven<br>
 JPA;<br>
