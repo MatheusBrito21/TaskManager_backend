@@ -1,26 +1,33 @@
 # TaskManager
 Esta é uma API Rest para gerencimaneto de tarefas, criada utilizando Java e Spring Boot.
 
-Tecnicas e ferramntas utilizadas:
-JPA;
-Hibernate;
-Injenção de Dependências;
-Banco de dados Relacional(Mysql e H2);
-Objeto de Transferência de dados - DTOs;
-Exception Handler e Exceções personalizadas;
-Angular para front-end:
+<h3>Tecnicas e ferramentas utilizadas:</h3>
+<p>Maven<br>
+JPA;<br>
+Hibernate;<br>
+Injenção de Dependências;<br>
+Banco de dados Relacional(Mysql e H2);<br>
+Objeto de Transferência de dados - DTOs;<br>
+Exception Handler e Exceções personalizadas;<br>
+Angular para front-end:</p>
 
-Como utilizar
+<h2>Como utilizar</h2>
+<p>
+Primeiro realize o clone do projeto em sua máquina atrvés do terminal do git.<be>
+Há dois perfis para utilização do banco de dados relacional. Seguem as configurações.<br>
+</p>
 
-Primeiro realize o clone do projeto em sua máquina atrvés do terminal do git.
-Há dois perfis para utilização do banco de dados relacional. Seguem as configurações.
+<h1>Banco em Memória  H2 data base - Perfil "teste"<h1>
 
-Banco em Memória  H2 data base - Perfil "teste"
-
+<p>
 Abra o arquivo application.properties em src/main/resources.
+https://github.com/MatheusBrito21/TaskManager_backend/blob/main/assets/imagens/turorialGIT/testeProfile.JPG
+
+
 Altere o valor de "spring.profiles.active=" para spring.profiles.active=teste
 Inicie a aplicação e o banco sera instanciado automaticamente com o nome "taskmgr_db".
 Para acessar o console do H2 entre em http://localhost:8080/h2/console
+</p>
 
 Banco local MySql - Perfil "dev"
 
