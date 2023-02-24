@@ -1,6 +1,6 @@
 package com.nl.TaskManager.services;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +21,9 @@ public class DBService {
 		
 		List<Tarefa> tarefas = new ArrayList<>();
 		
-		tarefas.add(new Tarefa(LocalDateTime.now(),LocalDateTime.now().plusHours(2) , "Testar DB", "Algo...", Status.ABERTA));
-		tarefas.add(new Tarefa(LocalDateTime.now(),LocalDateTime.now().plusHours(3) , "Testar Persistencia", "Algo...", Status.ABERTA));
-		tarefas.add(new Tarefa(LocalDateTime.now(),LocalDateTime.now().plusHours(4) , "Testar CRUD", "Algo...", Status.ABERTA));
+		tarefas.add(new Tarefa(LocalDate.now(),LocalDate.now().plusDays(2), "Testar DB", "Algo...", Status.ABERTA));
+		tarefas.add(new Tarefa(LocalDate.now(),LocalDate.now().plusDays(2), "Testar Persistencia", "Algo...", Status.ABERTA));
+		tarefas.add(new Tarefa(LocalDate.now(),LocalDate.now().plusDays(2), "Testar CRUD", "Algo...", Status.ABERTA));
 		
 		tarefaRepository.saveAll(tarefas);
 		
