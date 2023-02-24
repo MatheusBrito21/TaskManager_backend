@@ -1,6 +1,6 @@
 package com.nl.TaskManager.dtos;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 
@@ -10,11 +10,12 @@ import com.nl.TaskManager.model.Tarefa;
 
 public class TarefaDTO {
 	
+
 	private Integer id;
 	@NotNull(message = "O campo Data inicio não pode ser nulo!")
-	private LocalDateTime dataInicio;
+	private LocalDate dataInicio;
 	@NotNull(message = "O campo Data término não pode ser nulo!")
-	private LocalDateTime dataTermino;
+	private LocalDate dataTermino;
 	@NotNull(message = "O campo Título não pode ser nulo!")
 	private String titulo;
 	private String descricao;
@@ -39,16 +40,16 @@ public class TarefaDTO {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public LocalDateTime getDataInicio() {
+	public LocalDate getDataInicio() {
 		return dataInicio;
 	}
-	public void setDataInicio(LocalDateTime dataInicio) {
+	public void setDataInicio(@NotNull(message = "O campo Data inicio não pode ser nulo!") LocalDate dataInicio) {
 		this.dataInicio = dataInicio;
 	}
-	public LocalDateTime getDataTermino() {
+	public LocalDate getDataTermino() {
 		return dataTermino;
 	}
-	public void setDataTermino(LocalDateTime dataTermino) {
+	public void setDataTermino(@NotNull(message = "O campo Data término não pode ser nulo!") LocalDate dataTermino) {
 		this.dataTermino = dataTermino;
 	}
 	public String getTitulo() {

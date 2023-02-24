@@ -21,6 +21,18 @@ public class TarefaService {
 	public List<Tarefa> listaTarefas(){
 		return tarefaRepository.findAll();
 	}
+	
+	public List<Tarefa> listaTarefasAbertas(){
+		return tarefaRepository.findAllAbertas();
+	}
+	
+	public List<Tarefa> listaTarefasAndamento(){
+		return tarefaRepository.findAllAndamento();
+	}
+	
+	public List<Tarefa> listaTarefasFechadas(){
+		return tarefaRepository.findAllFechadas();
+	}
 
 	public Tarefa obterTarefa(Integer id) {
 		Optional<Tarefa> tarefa = tarefaRepository.findById(id);

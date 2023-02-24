@@ -21,7 +21,7 @@ import com.nl.TaskManager.model.Tarefa;
 import com.nl.TaskManager.services.TarefaService;
 
 @RestController
-@RequestMapping(path = "/task")
+@RequestMapping(path = "/tarefas")
 public class TarefaController {
 	
 	@Autowired
@@ -30,6 +30,27 @@ public class TarefaController {
 	@GetMapping
 	public ResponseEntity<List<TarefaDTO>> listarTarefas(){
 		List<Tarefa> tarefas = tarefaService.listaTarefas();
+		List<TarefaDTO> lista= tarefas.stream().map(x-> new TarefaDTO(x)).collect(Collectors.toList());
+		
+		return ResponseEntity.ok().body(lista);
+	}
+	@GetMapping(path = "/abertas")
+	public ResponseEntity<List<TarefaDTO>> listarTarefasAbertas(){
+		List<Tarefa> tarefas = tarefaService.listaTarefasAbertas();
+		List<TarefaDTO> lista= tarefas.stream().map(x-> new TarefaDTO(x)).collect(Collectors.toList());
+		
+		return ResponseEntity.ok().body(lista);
+	}
+	@GetMapping(path = "/andamento")
+	public ResponseEntity<List<TarefaDTO>> listarTarefasAndamento(){
+		List<Tarefa> tarefas = tarefaService.listaTarefasAndamento();
+		List<TarefaDTO> lista= tarefas.stream().map(x-> new TarefaDTO(x)).collect(Collectors.toList());
+		
+		return ResponseEntity.ok().body(lista);
+	}
+	@GetMapping(path = "/fechadas")
+	public ResponseEntity<List<TarefaDTO>> listarTarefasFechadas(){
+		List<Tarefa> tarefas = tarefaService.listaTarefasFechadas();
 		List<TarefaDTO> lista= tarefas.stream().map(x-> new TarefaDTO(x)).collect(Collectors.toList());
 		
 		return ResponseEntity.ok().body(lista);

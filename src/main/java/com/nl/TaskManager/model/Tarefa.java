@@ -1,23 +1,29 @@
 package com.nl.TaskManager.model;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.nl.TaskManager.dtos.TarefaDTO;
 
 @Entity
 @Table(name = "tarefa_tb")
-public class Tarefa {
+public class Tarefa implements Serializable  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private LocalDateTime dataInicio;
-	private LocalDateTime dataTermino;
+	private LocalDate dataInicio;
+	private LocalDate dataTermino;
 	private String titulo;
 	private String descricao;
 	private Status status;
@@ -26,7 +32,7 @@ public class Tarefa {
 		super();
 	}
 
-	public Tarefa(LocalDateTime dataInicio, LocalDateTime dataTermino, String titulo, String descricao, Status status) {
+	public Tarefa(LocalDate dataInicio, LocalDate dataTermino, String titulo, String descricao, Status status) {
 		super();
 		this.dataInicio = dataInicio;
 		this.dataTermino = dataTermino;
@@ -51,16 +57,16 @@ public class Tarefa {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public LocalDateTime getDataInicio() {
+	public @NotNull(message = "O campo Data inicio não pode ser nulo!") LocalDate getDataInicio() {
 		return dataInicio;
 	}
-	public void setDataInicio(LocalDateTime dataInicio) {
+	public void setDataInicio(LocalDate dataInicio) {
 		this.dataInicio = dataInicio;
 	}
-	public LocalDateTime getDataTermino() {
+	public @NotNull(message = "O campo Data término não pode ser nulo!") LocalDate getDataTermino() {
 		return dataTermino;
 	}
-	public void setDataTermino(LocalDateTime dataTermino) {
+	public void setDataTermino(LocalDate dataTermino) {
 		this.dataTermino = dataTermino;
 	}
 	public String getTitulo() {
